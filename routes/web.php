@@ -14,6 +14,8 @@ use App\Http\Controllers\PagesController;
 |
 */
 
-Route::get('/', [PagesController::class, 'viewProfile'])->name('view.profile');
+Route::get('/', [PagesController::class, 'viewEvent'])->name('view.event');
+
+Route::get('/profile', [PagesController::class, 'viewProfile'])->name('view.profile');
 
 Route::get('/profile/edit', [PagesController::class, 'viewProfileEdit'])->name('view.profile.edit');

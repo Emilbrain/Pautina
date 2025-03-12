@@ -10,8 +10,15 @@ class PagesController extends Controller
     {
         return view('pages.profile__information');
     }
+
     public function viewProfileEdit()
     {
         return view('pages.profile__edit');
     }
+
+    public function viewEvent()
+    {
+        return view('pages.event');
+    }
+
 }

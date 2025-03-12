@@ -22,18 +22,29 @@ body {
 
 .content__container {
     flex-grow: 1;
+    width: 100vw;
 }
 
-.mt20px{
+.body__container {
+    padding: 100px 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.mt20px {
     margin-top: 20px;
 }
 
-.mt30px{
+.mt30px {
     margin-top: 30px;
 }
-.body__container{
-    padding: 100px 0;
+
+.mt100px {
+    margin-top: 100px;
 }
+
 /*-------------------------SETTING----------------------------*/
 
 
@@ -58,13 +69,27 @@ body {
 
 /*-------------------------COMPONENTS----------------------------*/
 
-h3{
+h1 {
+    font-size: 96px;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+h2 {
+    text-align: center;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+h3 {
     font-size: 24px;
     font-weight: 700;
     line-height: normal;
 }
 
-h4{
+h4 {
     color: #A7A7A7;
     font-size: 18px;
     font-weight: 400;
@@ -84,18 +109,112 @@ h4{
     line-height: normal;
 }
 
-.button a{
+.button a,
+button {
     border-radius: 30px;
     background-color: #8D79F3;
     display: inline-block;
+    border: none;
+    cursor: pointer;
 }
 
+/*-------------------------MODAL----------------------------*/
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(32, 32, 32, 0.70);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s ease;
+
+}
+
+.modal__auth__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50px;
+    background: #FFF;
+    padding: 100px 180px;
+}
+
+.modal__auth__close {
+    position: absolute;
+    top: 64px;
+    right: 64px;
+    cursor: pointer;
+}
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.modal__form__section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal__form input {
+    width: 630px;
+    padding: 20px 30px;
+    border-radius: 8px;
+    border: 1px solid #A7A7A7;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.button__model {
+    padding: 20px 0;
+
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+}
+
+.modal__form__subtext {
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.modal__form__subtext span {
+    color: #8D79F3;
+    cursor: pointer;
+}
+
+/*-------------------------MODAL----------------------------*/
+
 /*-------------------------HOVER----------------------------*/
-.button a:hover {
+.button a:hover,
+button:hover {
     background-color: #7B62F9;
 }
 
-.button a:active {
+.button a:active,
+button:active {
     background-color: #6A50EB;
 }
 
@@ -125,7 +244,7 @@ h4{
     gap: 30px;
 }
 
-.header__button--auth a {
+.header__button--auth button {
     display: inline-block;
     padding: 20px 30px;
 
@@ -139,8 +258,167 @@ h4{
 /*-------------------------HEADER----------------------------*/
 
 
+/*-------------------------EVENT----------------------------*/
+
+.banner__ribbon {
+    padding: 22px 0;
+
+    background: #F9426D;
+    width: 100vw;
+    transform: rotate(1deg);
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.banner__ribbon-scroll {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    animation: marquee 15s linear infinite;
+
+}
+
+.banner__ribbon span {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.banner__row {
+    margin: 70px 0 165px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.banner__imageContainer {
+    width: 433px;
+    height: 433px;
+    border-radius: 50px;
+    border: 1px solid #000;
+    background: #FFF;
+    box-shadow: 38px 38px 0 0 #000;
+}
+
+.banner__text {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.banner__subtitle {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.banner__btn a {
+    padding: 20px 180px;
+
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.promo__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.promo__date {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.promo__date span {
+    color: #8D79F3;
+}
+
+.promo__row__column {
+    width: 660px;
+}
+
+.promo__inf {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.promo__text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.promo__blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.promo__infoBlock {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+
+    padding: 30px;
+
+    border-radius: 8px;
+    background: #F4F3F9;
+}
+
+.directions__row {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.directions__columnBlock {
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #A7A7A7;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.directions__columnBlock__title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.directions__columnBlock__subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/*-------------------------EVENT----------------------------*/
+
+
 /*-------------------------PROFILE----------------------------*/
-.profile__row{
+.profile__row {
     display: flex;
     flex-direction: row;
     gap: 30px;
@@ -152,7 +430,7 @@ h4{
     border: 1px solid #A7A7A7;
 }
 
-.profile__top{
+.profile__top {
     display: flex;
     flex-direction: row;
     align-items: start;
@@ -160,14 +438,14 @@ h4{
     gap: 140px;
 }
 
-.profile__socials{
+.profile__socials {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
 }
 
-.profile__name{
+.profile__name {
     width: 410px;
     font-size: 40px;
     font-weight: 700;
@@ -177,27 +455,29 @@ h4{
 
 .profile__age,
 .profile__education,
-.profile__location{
+.profile__location {
     padding: 10px 0;
     font-size: 18px;
     font-weight: 400;
     line-height: normal;
 }
 
-.profile__share{
+.profile__share {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 20px;
 }
-.profile__bottom{
+
+.profile__bottom {
     margin-top: 30px;
 }
-.profile__editBtn{
+
+.profile__editBtn {
     margin-top: 20px;
 }
 
-.profile__editBtn a{
+.profile__editBtn a {
     padding: 20px 83px;
     display: flex;
     align-items: center;
@@ -210,7 +490,7 @@ h4{
     line-height: normal;
 }
 
-.profile__saveBtn a{
+.profile__saveBtn a {
     padding: 20px 144px;
     display: flex;
     align-items: center;
@@ -222,15 +502,16 @@ h4{
     font-weight: 400;
     line-height: normal;
 }
+
 /*-------------------------PROFILE----------------------------*/
 
 
 /*-------------------------PROFILE-INFORMATION----------------------------*/
-.profilePage__container{
+.profilePage__container {
     flex-grow: 1;
 }
 
-.profileInformation__section__inf{
+.profileInformation__section__inf {
     font-size: 18px;
 
 }
@@ -239,7 +520,8 @@ h4{
     font-weight: 400;
     line-height: normal;
 }
-.profileInformation__section__inf a{
+
+.profileInformation__section__inf a {
     color: #8D79F3;
     font-weight: 400;
     line-height: normal;
@@ -264,7 +546,7 @@ h4{
     line-height: normal;
 }
 
-.profileInformation__section__inf__direction{
+.profileInformation__section__inf__direction {
     display: inline-block;
     padding: 20px 30px;
     border-radius: 30px;
@@ -275,21 +557,46 @@ h4{
     font-weight: 400;
     line-height: normal;
 }
+
 /*-------------------------PROFILE-INFORMATION---------------------------*/
 
 
 /*-------------------------PROFILE-EDIT---------------------------*/
-.profile__edit-links{
+
+.profile-edit__top input {
+    display: none;
+}
+
+.edit__avatar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+    border-radius: 20px;
+    background: rgba(239, 237, 245, 0.50);
+}
+
+.avatar__text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile__edit-links {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.profile__edit-link.active{
+
+.profile__edit-link.active {
     background: rgba(141, 121, 243, 0.15);
     color: #8D79F3;
 }
 
-.profile__edit-link{
+.profile__edit-link {
     padding: 30px;
     border-radius: 10px;
     background: rgba(239, 237, 245, 0.50);
@@ -299,21 +606,21 @@ h4{
     line-height: normal;
 }
 
-.profileEdit__section{
+.profileEdit__section {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.profileEdit__section label{
+
+.profileEdit__section label {
     font-size: 18px;
     font-weight: 700;
     line-height: normal;
 }
+
 .profileEdit__section input,
 .profileEdit__section select,
-.profileEdit__section textarea
-
-{
+.profileEdit__section textarea {
     width: 630px;
     padding: 20px 30px;
     border-radius: 8px;
@@ -323,27 +630,27 @@ h4{
     font-weight: 400;
     line-height: normal;
 }
-.profileEdit__section__subtext{
+
+.profileEdit__section__subtext {
     color: #A7A7A7;
     font-size: 18px;
     font-weight: 400;
     line-height: normal;
 }
 
-.custom-selector{
+.custom-selector {
     position: relative;
     width: min-content;
 }
 
-.custom-selector select{
+.custom-selector select {
     appearance: none; /* Скрываем стандартную стрелку */
-    /*background: url('data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='11' viewBox='0 0 18 11' fill='none'%3E%3Cpath d='M2.10791 -6.937e-07L8.90684 6.79892L15.7206 -9.24496e-08L17.8137 2.09312L8.90684 11L-4.76837e-05 2.09312L2.10791 -6.937e-07Z' fill='%23202020'/%3E%3C/svg%3E') no-repeat right center; !* Стрелка *!*/
-    background-size: 10px; /* Размер стрелки */
+    background-size: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.custom-selector::after{
+.custom-selector::after {
     content: '';
     position: absolute;
     right: 30px;
@@ -355,7 +662,7 @@ h4{
     background-size: 10px;
 }
 
-.profileEdit__saveBtn a{
+.profileEdit__saveBtn a {
     width: 630px;
     padding: 20px 0;
     text-align: center;
@@ -365,6 +672,72 @@ h4{
     font-weight: 400;
     line-height: normal;
 }
+
+.private__container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #202020;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+
+}
+
+input:checked + .slider {
+    background-color: #8D79F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
 
 /*-------------------------PROFILE-EDIT---------------------------*/
 
@@ -390,14 +763,14 @@ h4{
     gap: 34px;
 }
 
-.footer__nav-top{
+.footer__nav-top {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 60px;
 }
 
-.footer__nav-bottom{
+.footer__nav-bottom {
     color: #202020;
     font-size: 18px;
     font-style: normal;
@@ -410,25 +783,26 @@ h4{
     text-underline-offset: 25%; /* 4.5px */
     text-underline-position: from-font;
 }
-.footer__socials{
+
+.footer__socials {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.footer__socials-top{
+
+.footer__socials-top {
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
 }
-.footer__socials-bottom{
+
+.footer__socials-bottom {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
 }
-
-
 
 
 /*-------------------------FOOTER----------------------------*/

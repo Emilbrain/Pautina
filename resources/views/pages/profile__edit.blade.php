@@ -8,12 +8,26 @@
                     <div class="profile__column">
                         <div class="content__border">
                             <header class="profile-edit__top">
+                                <label for="avatar">
+                                    <div class="edit__avatar">
+                                        <div class="avatar__img">
+                                            <img src="{{asset('images/icon/avatar.png')}}" alt="">
+                                        </div>
+                                        <div class="avatar__text">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="18"
+                                                 viewBox="0 0 15 18" fill="none">
+                                                <path
+                                                    d="M4.23529 13.7647V7.41177H0L7.41176 0L14.8235 7.41177H10.5882V13.7647H4.23529ZM0 18V15.8824H14.8235V18H0Z"
+                                                    fill="#8D79F3"/>
+                                            </svg>
+                                            Изменить фотографию
+                                        </div>
+                                    </div>
+                                </label>
                                 <input type="file" name="avatar" id="avatar">
-                                <div class="profile__avatar">
-                                    <img src="{{asset('images/icon/avatar.png')}}" alt="">
-                                </div>
+
                             </header>
-                            <footer class="profile-edit__bottom">
+                            <footer class="profile-edit__bottom mt30px">
                                 <div class="button profile__saveBtn">
                                     <a href="">
                                         Сохранить
@@ -188,8 +202,13 @@
 
                             <div class="profileEdit__main">
                                 <div class="profileEdit__section mt30px">
-                                    <label for="private">Закрытый профиль</label>
-                                    <input type="checkbox" name="private" id="private" checked>
+                                    <div class="private__container">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                        Закрытый профиль
+                                    </div>
                                     <p class="profileEdit__section__subtext">
                                         В закрытом профиле публично отображается только фотография и имя
                                     </p>
@@ -210,8 +229,8 @@
                                 </div>
 
                                 <div class="profileEdit__section mt30px">
-                                    <label for="password-conformation">Повторите новый пароль</label>
-                                    <input type="password" name="password-conformation" id="password">
+                                    <label for="password_confirmation">Повторите новый пароль</label>
+                                    <input type="password" name="password_confirmation" id="password">
                                 </div>
 
                                 <div class="button profileEdit__saveBtn mt30px">
@@ -221,8 +240,6 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
