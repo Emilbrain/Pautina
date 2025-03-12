@@ -12,10 +12,8 @@ return new class extends Migration {
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('login')->unique();
             $table->string('email')->unique();
-            $table->string('name');
-            $table->string('surname');
+            $table->string('fio');
             $table->enum('status', ['active', 'inactive', 'banned'])->default('active');
             $table->string('company')->nullable();
             $table->string('position')->nullable();

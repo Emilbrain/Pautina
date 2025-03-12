@@ -181,7 +181,11 @@ button {
     font-weight: 400;
     line-height: normal;
 }
-
+.modal__form__section label{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+}
 .button__model {
     padding: 20px 0;
 
@@ -203,6 +207,17 @@ button {
 .modal__form__subtext span {
     color: #8D79F3;
     cursor: pointer;
+}
+
+.modal__form  .input-error{
+    border: 1px solid #F9426D;
+}
+
+.error-message{
+    color: #F9426D;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
 }
 
 /*-------------------------MODAL----------------------------*/
