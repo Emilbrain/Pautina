@@ -349,7 +349,7 @@
                     <!-- Ссылка для скачивания задания -->
                     <!-- для ссылки сделай выделение какое нибудь -->
                     <div class="form-group mb-3">
-                        <a href="" class="btn btn-info" target="_blank">Скачать задание</a>
+                        <a href="{{ $issetApplication->event->task }}" class="btn btn-info" target="_blank">Скачать задание</a>
                     </div>
 
                     @if($fileExists)
