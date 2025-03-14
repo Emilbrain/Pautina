@@ -21,9 +21,9 @@ class PagesController extends Controller
     {
         if (auth()->check()) {
             $issetApplication = Application::where('user_id', auth()->id())->first();
-            $fileExists = $issetApplication->answer ? true : false;
-            return view('pages.event', compact('issetApplication', 'fileExists'));
+            $fileExists = $issetApplication && $issetApplication->answer;
 
+            return view('pages.event', compact('issetApplication', 'fileExists'));
         }
         return view('pages.event');
     }
