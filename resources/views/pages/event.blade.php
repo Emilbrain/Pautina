@@ -340,4 +340,48 @@
         </div>
     </div>
 
+    <div>
+        @auth
+            @if($issetApplication && $issetApplication->status === 'в работе')
+                <form action="{{ route('application.update', $issetApplication) }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                    <!-- Ссылка для скачивания задания -->
+                    <!-- для ссылки сделай выделение какое нибудь -->
+                    <div class="form-group mb-3">
+                        <a href="" class="btn btn-info" target="_blank">Скачать задание</a>
+                    </div>
+
+                    @if($fileExists)
+                        <p>Файл уже загружен дальнейшая загрузка файла удалит предыдущий ответ</p>
+                    @endif
+
+                    <!-- Поле для загрузки файла работы -->
+                    <div class="form-group">
+                        <label for="answer">Загрузите файл работы</label>
+                        <input type="file" name="answer" id="answer" class="form-control">
+                        @error('answer')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <!-- Кнопка отправки формы -->
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </div>
+                </form>
+            @else
+                <form action="{{ route('application.store') }}" method="post">
+                    @csrf
+                    <input type="text" name="group" placeholder="Введите группу" value="{{ old('group') }}">
+                    @error('code')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    <input type="text" name="code" placeholder="Введите код доступа">
+                    <button type="submit">Отправить</button>
+                </form>
+            @endif
+        @endauth
+    </div>
+
 @endsection

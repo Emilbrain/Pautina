@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ApplicationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\UserController;
@@ -27,6 +29,16 @@ Route::middleware("auth")->group(function () {
    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
     Route::get('/profile', [PagesController::class, 'viewProfile'])->name('view.profile');
     Route::get('/profile/edit', [PagesController::class, 'viewProfileEdit'])->name('view.profile.edit');
+    Route::post('/application/store', [ApplicationController::class, 'applicationCreate'])->name('application.store');
+    Route::put('/application/update/{application}', [ApplicationController::class, 'applicationUpdate'])->name('application.update');
+});
+
+Route::controller(AdminController::class)->middleware('check.admin')->prefix('admin')->name('admin.')->group(function (){
+    Route::get('/', 'showMain')->name('view.main');
+    Route::get('/event/create', 'showCreate')->name('view.create');
+    Route::post('/event/store', 'storeEvent')->name('event.store');
+    Route::get('/applications', 'showApplications')->name('view.applications');
+
 });
 
 
