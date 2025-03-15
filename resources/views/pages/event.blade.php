@@ -247,96 +247,96 @@
         </div>
     </div>
 
-    <div class="promo section mt100px">
-        <div class="promo__title">
-            <h2>
-                Прокачаемся в одном из
-                <br>
-                7 направлений за 14 дней!
-            </h2>
-        </div>
-        <div class="promo__row">
-            <div class="promo__row__column promo__inf">
-                <div class="promo__date">
-                    Даты:
-                    <span>
-                        3-17 апреля 2025
-                    </span>
-                </div>
-                <p class="promo__text">
-                    Вы создадите проект в портфолио под руководством опытного наставника, получите много обратной связи,
-                    улучшите свои навыки по выбранному направлению.
-                </p>
-                <p class="promo__text">
-                    А также примете участие в конкурсе и получите сертификат участника и подарки за призовые места.
-                </p>
-                <p class="promo__text">
-                    Принять участие могут как начинающие, так и успешные специалисты.
-                </p>
-            </div>
-            <div class="promo__row__column promo__blocks">
-                <div class="promo__infoBlock">
-                    Персональная проверка вашей работы от эксперта
-                </div>
-                <div class="promo__infoBlock">
-                    Полезные материалы для обучения по направлению
-                </div>
-                <div class="promo__infoBlock">
-                    Сертификаты и подарки на финальном конкурсе
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="promo section mt100px">--}}
+{{--        <div class="promo__title">--}}
+{{--            <h2>--}}
+{{--                Прокачаемся в одном из--}}
+{{--                <br>--}}
+{{--                7 направлений за 14 дней!--}}
+{{--            </h2>--}}
+{{--        </div>--}}
+{{--        <div class="promo__row">--}}
+{{--            <div class="promo__row__column promo__inf">--}}
+{{--                <div class="promo__date">--}}
+{{--                    Даты:--}}
+{{--                    <span>--}}
+{{--                        3-17 апреля 2025--}}
+{{--                    </span>--}}
+{{--                </div>--}}
+{{--                <p class="promo__text">--}}
+{{--                    Вы создадите проект в портфолио под руководством опытного наставника, получите много обратной связи,--}}
+{{--                    улучшите свои навыки по выбранному направлению.--}}
+{{--                </p>--}}
+{{--                <p class="promo__text">--}}
+{{--                    А также примете участие в конкурсе и получите сертификат участника и подарки за призовые места.--}}
+{{--                </p>--}}
+{{--                <p class="promo__text">--}}
+{{--                    Принять участие могут как начинающие, так и успешные специалисты.--}}
+{{--                </p>--}}
+{{--            </div>--}}
+{{--            <div class="promo__row__column promo__blocks">--}}
+{{--                <div class="promo__infoBlock">--}}
+{{--                    Персональная проверка вашей работы от эксперта--}}
+{{--                </div>--}}
+{{--                <div class="promo__infoBlock">--}}
+{{--                    Полезные материалы для обучения по направлению--}}
+{{--                </div>--}}
+{{--                <div class="promo__infoBlock">--}}
+{{--                    Сертификаты и подарки на финальном конкурсе--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
-    <div class="directions section mt100px">
-        <div class="directions__title">
-            <h2>
-                Направления
-            </h2>
-        </div>
+{{--    <div class="directions section mt100px">--}}
+{{--        <div class="directions__title">--}}
+{{--            <h2>--}}
+{{--                Направления--}}
+{{--            </h2>--}}
+{{--        </div>--}}
 
-        <div class="directions__row">
-            <div class="directions__columnBlock">
-                <div class="directions__columnBlock__img">
-                    <img src="{{asset('images/directions/directions_1.png')}}" alt="">
-                </div>
-                <div class="directions__columnBlock__title">
-                    Веб-дизайн
-                </div>
-                <div class="directions__columnBlock__subtitle">
-                    Создание визуально привлекательных и удобных веб-страниц
-                </div>
-            </div>
-            <div class="directions__columnBlock">
-                <div class="directions__columnBlock__img">
-                    <img src="{{asset('images/directions/directions_2.png')}}" alt="">
-                </div>
-                <div class="directions__columnBlock__title">
-                    Веб-разработка front-end
-                </div>
-                <div class="directions__columnBlock__subtitle">
-                    Создание внешнего интерфейса веб-сайтов и приложений
-                </div>
-            </div>
-            <div class="directions__columnBlock">
-                <div class="directions__columnBlock__img">
-                    <img src="{{asset('images/directions/directions_3.png')}}" alt="">
-                </div>
-                <div class="directions__columnBlock__title">
-                    Веб-разработка front-end
-                </div>
-                <div class="directions__columnBlock__subtitle">
-                    Создание серверной части веб-сайтов и приложений
-                </div>
-            </div>
-        </div>
-    </div>
+{{--        <div class="directions__row">--}}
+{{--            <div class="directions__columnBlock">--}}
+{{--                <div class="directions__columnBlock__img">--}}
+{{--                    <img src="{{asset('images/directions/directions_1.png')}}" alt="">--}}
+{{--                </div>--}}
+{{--                <div class="directions__columnBlock__title">--}}
+{{--                    Веб-дизайн--}}
+{{--                </div>--}}
+{{--                <div class="directions__columnBlock__subtitle">--}}
+{{--                    Создание визуально привлекательных и удобных веб-страниц--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="directions__columnBlock">--}}
+{{--                <div class="directions__columnBlock__img">--}}
+{{--                    <img src="{{asset('images/directions/directions_2.png')}}" alt="">--}}
+{{--                </div>--}}
+{{--                <div class="directions__columnBlock__title">--}}
+{{--                    Веб-разработка front-end--}}
+{{--                </div>--}}
+{{--                <div class="directions__columnBlock__subtitle">--}}
+{{--                    Создание внешнего интерфейса веб-сайтов и приложений--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="directions__columnBlock">--}}
+{{--                <div class="directions__columnBlock__img">--}}
+{{--                    <img src="{{asset('images/directions/directions_3.png')}}" alt="">--}}
+{{--                </div>--}}
+{{--                <div class="directions__columnBlock__title">--}}
+{{--                    Веб-разработка front-end--}}
+{{--                </div>--}}
+{{--                <div class="directions__columnBlock__subtitle">--}}
+{{--                    Создание серверной части веб-сайтов и приложений--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
 
     <div class="section mt100px">
         @auth
             @if($issetApplication && $issetApplication->status === 'в работе')
-                <div class="stages__title">
+                <div class="stages__title" id="application_tournament">
                     <h2>
                         Заявки на турнир
                     </h2>
@@ -369,7 +369,7 @@
                     </div>
                 </form>
             @else
-                <div class="stages__title">
+                <div class="stages__title" id="send_work">
                     <h2>
                         Отправка работ
                     </h2>

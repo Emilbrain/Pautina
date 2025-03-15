@@ -6,19 +6,27 @@
                     <img src="{{asset('images/logo/logo_text.svg')}}" alt="">
                 </a>
             </div>
-{{--            <nav class="header__nav">--}}
-{{--                <a href="" class="link">О нас</a>--}}
-{{--                <a href="" class="link">Мероприятия</a>--}}
-{{--                <a href="" class="link">Направления</a>--}}
-{{--                <a href="" class="link">Услуги--}}
-{{--                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">--}}
-{{--                        <path fill-rule="evenodd" clip-rule="evenodd"--}}
-{{--                              d="M0 9.50983L2.38623 11.8961L9.0759 5.22734V10.6H11.8959V0H1.2959V2.83H6.66936L0 9.50983Z"--}}
-{{--                              fill="#202020"/>--}}
-{{--                    </svg>--}}
-{{--                </a>--}}
-{{--                <a href="" class="link">Контакты</a>--}}
-{{--            </nav>--}}
+            <nav class="header__nav">
+                @auth
+                    @if($issetApplication && $issetApplication->status === 'в работе')
+                        <a href="{{ route('view.event') }}#application_tournament" class="link">Заявки на турнир</a>
+                    @else
+                        <a href="{{ route('view.event') }}#send_work" class="link">Отправка работ</a>
+                    @endif
+
+                @endauth
+                {{--                <a href="" class="link">О нас</a>--}}
+                {{--                <a href="" class="link">Мероприятия</a>--}}
+                {{--                <a href="" class="link">Направления</a>--}}
+                {{--                <a href="" class="link">Услуги--}}
+                {{--                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">--}}
+                {{--                        <path fill-rule="evenodd" clip-rule="evenodd"--}}
+                {{--                              d="M0 9.50983L2.38623 11.8961L9.0759 5.22734V10.6H11.8959V0H1.2959V2.83H6.66936L0 9.50983Z"--}}
+                {{--                              fill="#202020"/>--}}
+                {{--                    </svg>--}}
+                {{--                </a>--}}
+                {{--                <a href="" class="link">Контакты</a>--}}
+            </nav>
             <div class="header__menu">
                 @auth()
                     <div class="header__profile">
