@@ -2,13 +2,16 @@
 
 @section('content')
     <div class="container">
-        <div>
-            <a href="{{ route('admin.view.main') }}">Главная</a>
-            <a href="{{ route('admin.view.create') }}">Создание</a>
-            <a href="{{ route('admin.view.applications') }}">Заявки</a>
+        <h2>Создать направление</h2>
+
+        <div class="mb-3 mt30px ">
+            <div class="button admin__button">
+                <a href="{{ route('admin.view.main') }}">Главная</a>
+                <a href="{{ route('admin.view.create') }}">Создание</a>
+                <a href="{{ route('admin.view.applications') }}">Заявки</a>
+            </div>
 
         </div>
-        <h2>Создать направление</h2>
         <form action="{{ route('admin.event.store') }}" method="post">
             @csrf
 
@@ -44,7 +47,8 @@
                 <div class="input-group">
                     <input type="text" name="code" id="code" class="form-control"
                            value="{{ old('code') }}">
-                    <button type="button" class="btn btn-secondary" onclick="generateUniqueCode()">Сгенерировать</button>
+                    <button type="button" class="btn btn-secondary" onclick="generateUniqueCode()">Сгенерировать
+                    </button>
                 </div>
                 @error('code')
                 <div class="invalid-feedback">{{ $message }}</div>

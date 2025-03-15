@@ -2,18 +2,25 @@
 
 @section('content')
     <div class="container">
-        <div>
-            <a href="{{ route('admin.view.main') }}">Главная</a>
-            <a href="{{ route('admin.view.create') }}">Создание</a>
-            <a href="{{ route('admin.view.applications') }}">Заявки</a>
 
-        </div>
         <h2>Список мероприятий</h2>
+
+        <div>
+            <div class="mb-3 mt30px ">
+                <div class="button admin__button">
+                    <a href="{{ route('admin.view.main') }}">Главная</a>
+                    <a href="{{ route('admin.view.create') }}">Создание</a>
+                    <a href="{{ route('admin.view.applications') }}">Заявки</a>
+                </div>
+
+            </div>
+        </div>
+
 
         @if ($events->isEmpty())
             <p>Нет доступных мероприятий.</p>
         @else
-            <table class="table">
+            <table class=" table mt30px">
                 <thead>
                 <tr>
                     <th>Название</th>

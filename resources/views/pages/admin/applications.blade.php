@@ -2,13 +2,16 @@
 
 @section('content')
     <div class="container">
-        <div class="mb-3">
-            <a href="{{ route('admin.view.main') }}">Главная</a>
-            <a href="{{ route('admin.view.create') }}">Создание</a>
-            <a href="{{ route('admin.view.applications') }}">Заявки</a>
-        </div>
-
         <h2>Список заявок</h2>
+
+        <div class="mb-3 mt30px ">
+            <div class="button admin__button">
+                <a href="{{ route('admin.view.main') }}">Главная</a>
+                <a href="{{ route('admin.view.create') }}">Создание</a>
+                <a href="{{ route('admin.view.applications') }}">Заявки</a>
+            </div>
+
+        </div>
 
         <!-- Форма фильтрации -->
         <form action="{{ route('admin.view.applications') }}" method="GET" class="mb-4">

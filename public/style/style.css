@@ -148,7 +148,7 @@ button {
 
     border-radius: 50px;
     background: #FFF;
-    padding: 100px 180px;
+    padding: 50px 100px;
 }
 
 .modal__auth__close {
@@ -161,8 +161,8 @@ button {
 .modal__form {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    margin-top: 60px;
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .modal__form__section {
@@ -172,7 +172,7 @@ button {
 }
 
 .modal__form input {
-    width: 630px;
+    width: 600px;
     padding: 20px 30px;
     border-radius: 8px;
     border: 1px solid #A7A7A7;
@@ -429,6 +429,50 @@ button:active {
     line-height: normal;
 }
 
+.event__form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.event__form input {
+    width: 600px;
+    padding: 20px 30px;
+    border-radius: 8px;
+    border: 1px solid #A7A7A7;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.btn-primary{
+    width: 600px;
+    padding: 20px 30px;
+
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.btn-info{
+    width: 200px;
+    padding: 20px 30px;
+
+    color: #FFF;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 /*-------------------------EVENT----------------------------*/
 
 
@@ -757,10 +801,35 @@ input:checked + .slider:before {
 /*-------------------------PROFILE-EDIT---------------------------*/
 
 
+/*-------------------------ADMIN---------------------------*/
+
+.mb-3 .admin__button{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.admin__button a{
+    color: #FFF;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+    padding: 10px 15px  ;
+}
+
+.table tr th,
+.table tr td{
+    padding-right: 60px;
+}
+
+/*-------------------------ADMIN---------------------------*/
+
+
 /*-------------------------FOOTER----------------------------*/
 .footer__bg {
     background-color: #F4F3F9;
-
+    margin-top: 100px;
 }
 
 .footer__container {
