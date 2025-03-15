@@ -20,10 +20,19 @@ class PagesController extends Controller
     public function viewEvent()
     {
         if (auth()->check()) {
-            $issetApplication = Application::where('user_id', auth()->id())->first();
-            $fileExists = $issetApplication && $issetApplication->answer;
+            $applications = [];
+            $fileExists = '';
+            $issetApplication = Application::where('user_id', auth()->id())->get();
+            foreach ($issetApplication as $application) {
+                if($application->status === 'в работе'){
+                    $applications = $application;
+                }
+                $fileExists = $application && $application->answer;
+            }
 
-            return view('pages.event', compact('issetApplication', 'fileExists'));
+
+
+            return view('pages.event', compact('applications', 'fileExists'));
         }
         return view('pages.event');
     }

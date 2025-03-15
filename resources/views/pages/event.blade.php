@@ -335,19 +335,19 @@
 
     <div class="section mt100px">
         @auth
-            @if($issetApplication && $issetApplication->status === 'в работе')
+            @if($applications)
                 <div class="stages__title" id="application_tournament">
                     <h2>
-                        Заявки на турнир
+                        Отправка работ
                     </h2>
                 </div>
-                <form action="{{ route('application.update', $issetApplication) }}" id="applications" class="event__form mt30px" method="post" enctype="multipart/form-data">
+                <form action="{{ route('application.update', $applications) }}" id="applications" class="event__form mt30px" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <!-- Ссылка для скачивания задания -->
                     <!-- для ссылки сделай выделение какое нибудь -->
                     <div class="form-group mb-3 button">
-                        <a href="{{ $issetApplication->event->task }}" class=" btn-info" target="_blank">Скачать задание</a>
+                        <a href="{{ $applications->event->task }}" class=" btn-info" target="_blank">Скачать задание</a>
                     </div>
 
                     @if($fileExists)
@@ -371,7 +371,7 @@
             @else
                 <div class="stages__title" id="send_work">
                     <h2>
-                        Отправка работ
+                        Заявки на турнир
                     </h2>
                 </div>
                 <form action="{{ route('application.store') }}" class="event__form mt30px"  id="applications" method="post">
