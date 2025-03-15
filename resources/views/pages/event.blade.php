@@ -237,7 +237,7 @@
                             </a>
                         @endauth
                         @guest()
-                            <a id="openModalAuth">
+                            <a class="openModalAuth">
                                 Участвовать
                             </a>
                         @endguest

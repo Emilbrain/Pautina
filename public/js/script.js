@@ -1,24 +1,23 @@
 "use strict";
 
-const openModalAuth = document.getElementById('openModalAuth');
+const openModalAuthElements = document.querySelectorAll('.openModalAuth');
 const closeModalAuth = document.getElementById('closeModalAuth');
 const closeModalRegist = document.getElementById('closeModalRegist');
 const modalAuth = document.getElementById('modalAuth');
 const modalRegist = document.getElementById('modalRegist');
 const goToLogin = document.getElementById('gotoLogin');
 const goToRegist = document.getElementById('gotoRegist');
-
-
 const body = document.body;
 let scrollY;
 
-
-openModalAuth.addEventListener('click', () => {
-    modalAuth.classList.toggle('active');
-    scrollY = window.scrollY;
-    body.style.position = 'fixed';
-    body.style.top = `-${scrollY}px`;
-
+// Назначаем обработчик для каждого элемента с классом openModalAuth
+openModalAuthElements.forEach((element) => {
+    element.addEventListener('click', () => {
+        modalAuth.classList.toggle('active');
+        scrollY = window.scrollY;
+        body.style.position = 'fixed';
+        body.style.top = `-${scrollY}px`;
+    });
 });
 
 closeModalAuth.addEventListener('click', () => {
@@ -26,7 +25,6 @@ closeModalAuth.addEventListener('click', () => {
     body.style.position = '';
     body.style.top = '';
     window.scrollTo(0, scrollY);
-
 });
 
 modalAuth.addEventListener('click', (e) => {
@@ -41,6 +39,7 @@ modalAuth.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         modalAuth.classList.remove('active');
+        modalRegist.classList.remove('active');
         body.style.position = '';
         body.style.top = '';
         window.scrollTo(0, scrollY);
@@ -50,13 +49,11 @@ document.addEventListener('keydown', (e) => {
 goToRegist.addEventListener('click', () => {
     modalAuth.classList.remove('active');
     modalRegist.classList.toggle('active');
-
 });
 
 goToLogin.addEventListener('click', () => {
     modalRegist.classList.remove('active');
     modalAuth.classList.toggle('active');
-
 });
 
 closeModalRegist.addEventListener('click', () => {
@@ -64,7 +61,6 @@ closeModalRegist.addEventListener('click', () => {
     body.style.position = '';
     body.style.top = '';
     window.scrollTo(0, scrollY);
-
 });
 
 modalRegist.addEventListener('click', (e) => {
@@ -76,31 +72,20 @@ modalRegist.addEventListener('click', (e) => {
     }
 });
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        modalRegist.classList.remove('active');
-        body.style.position = '';
-        body.style.top = '';
-        window.scrollTo(0, scrollY);
-    }
-});
-
-
+// Остальной код для отправки форм остается без изменений
 document.addEventListener("DOMContentLoaded", function () {
-    // Получаем все формы с классом .modal__form
     const forms = document.querySelectorAll('.modal__form');
 
     forms.forEach((form) => {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Очищаем все сообщения об ошибках и классы ошибок в текущей форме
             form.querySelectorAll(".error-message").forEach(el => el.innerHTML = "");
             form.querySelectorAll(".input-error").forEach(el => el.classList.remove("input-error"));
 
             const formData = new FormData(form);
 
-            fetch(form.action, { // Отправляем запрос на адрес формы (login или register)
+            fetch(form.action, {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -114,26 +99,23 @@ document.addEventListener("DOMContentLoaded", function () {
                             modalRegist.classList.remove('active');
                             modalAuth.classList.toggle('active');
                         } else {
-                            if(data.role === 'admin') {
+                            if (data.role === 'admin') {
                                 window.location.href = "/admin";
-                            }else{
+                            } else {
                                 window.location.href = "/profile";
                             }
                         }
                     } else {
                         for (let field in data.errors) {
-                            // Формируем уникальные id для ошибок и полей
                             let errorDiv = form.querySelector(`#error-${form.id}_${field}`);
                             let inputField = form.querySelector(`#${form.id}_${field}`);
-                            console.log(`#error-${form.id}_${field}`);
-
 
                             if (errorDiv) {
-                                errorDiv.innerHTML = data.errors[field][0]; // Показываем первую ошибку
+                                errorDiv.innerHTML = data.errors[field][0];
                             }
 
                             if (inputField) {
-                                inputField.classList.add("input-error"); // Добавляем класс ошибки
+                                inputField.classList.add("input-error");
                             }
                         }
                     }

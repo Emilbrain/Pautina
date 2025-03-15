@@ -7,14 +7,6 @@
                 </a>
             </div>
             <nav class="header__nav">
-                @auth
-                    @if($issetApplication && $issetApplication->status === 'в работе')
-                        <a href="{{ route('view.event') }}#application_tournament" class="link">Заявки на турнир</a>
-                    @else
-                        <a href="{{ route('view.event') }}#send_work" class="link">Отправка работ</a>
-                    @endif
-
-                @endauth
                 {{--                <a href="" class="link">О нас</a>--}}
                 {{--                <a href="" class="link">Мероприятия</a>--}}
                 {{--                <a href="" class="link">Направления</a>--}}
@@ -57,7 +49,7 @@
                 @endauth
                 @guest()
                     <div class="button  header__button--auth">
-                        <button id="openModalAuth">Авторизация</button>
+                        <button class="openModalAuth">Авторизация</button>
                     </div>
                 @endguest
             </div>
