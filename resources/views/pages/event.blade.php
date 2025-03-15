@@ -26,7 +26,7 @@
             </span>
 
                 <span>
-                7 направлений
+                3 направлений
             </span>
 
                 <span>
@@ -42,7 +42,7 @@
             </span>
 
                 <span>
-                Марафон
+                Турнир
             </span>
 
                 <span>
@@ -66,7 +66,7 @@
             </span>
 
                 <span>
-                7 направлений
+                3 направлений
             </span>
 
                 <span>
@@ -82,7 +82,7 @@
             </span>
 
                 <span>
-                 Марафон
+                 Турнир
                 </span>
 
                 <span>
@@ -106,7 +106,7 @@
             </span>
 
                 <span>
-                7 направлений
+                3 направлений
             </span>
 
                 <span>
@@ -130,7 +130,7 @@
             </span>
 
                 <span>
-                7 направлений
+                3 направлений
             </span>
 
                 <span>
@@ -146,7 +146,7 @@
             </span>
 
                 <span>
-                Марафон
+                Турнир
             </span>
 
                 <span>
@@ -170,7 +170,7 @@
             </span>
 
                 <span>
-                7 направлений
+                3 направлений
             </span>
 
                 <span>
@@ -186,7 +186,7 @@
             </span>
 
                 <span>
-                 Марафон
+                 Турнир
                 </span>
 
                 <span>
@@ -210,7 +210,7 @@
             </span>
 
                 <span>
-                7 направлений
+                3 направлений
             </span>
 
                 <span>
@@ -223,7 +223,7 @@
             <div class="banner__row">
                 <div class="banner__row__column banner__text">
                     <h1>
-                        Марафон
+                        Турнир
                     </h1>
                     <p class="banner__subtitle">
                         Прокачайте свои умения за 14
@@ -231,7 +231,7 @@
                         увлекательных дней!
                     </p>
                     <div class="button banner__btn">
-                        <a href="">
+                        <a href="#applications">
                             Участвовать
                         </a>
                     </div>
@@ -332,24 +332,22 @@
         </div>
     </div>
 
-    <div class="stages section mt100px">
-        <div class="stages__title">
-            <h2>
-                Этапы марафона
-            </h2>
-        </div>
-    </div>
 
-    <div>
+    <div class="section mt100px">
         @auth
             @if($issetApplication && $issetApplication->status === 'в работе')
-                <form action="{{ route('application.update', $issetApplication) }}" method="post" enctype="multipart/form-data">
+                <div class="stages__title">
+                    <h2>
+                        Заявки на турнир
+                    </h2>
+                </div>
+                <form action="{{ route('application.update', $issetApplication) }}" id="applications" class="event__form mt30px" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <!-- Ссылка для скачивания задания -->
                     <!-- для ссылки сделай выделение какое нибудь -->
-                    <div class="form-group mb-3">
-                        <a href="{{ $issetApplication->event->task }}" class="btn btn-info" target="_blank">Скачать задание</a>
+                    <div class="form-group mb-3 button">
+                        <a href="{{ $issetApplication->event->task }}" class=" btn-info" target="_blank">Скачать задание</a>
                     </div>
 
                     @if($fileExists)
@@ -367,18 +365,23 @@
 
                     <!-- Кнопка отправки формы -->
                     <div class="form-group mt-3">
-                        <button type="submit" class="btn btn-primary">Отправить</button>
+                        <button type="submit" class="button btn-primary">Отправить</button>
                     </div>
                 </form>
             @else
-                <form action="{{ route('application.store') }}" method="post">
+                <div class="stages__title">
+                    <h2>
+                        Отправка работ
+                    </h2>
+                </div>
+                <form action="{{ route('application.store') }}" class="event__form mt30px"  id="applications" method="post">
                     @csrf
                     <input type="text" name="group" placeholder="Введите группу" value="{{ old('group') }}">
                     @error('code')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <input type="text" name="code" placeholder="Введите код доступа">
-                    <button type="submit">Отправить</button>
+                    <button type="submit" class="button btn-primary">Отправить</button>
                 </form>
             @endif
         @endauth
