@@ -66,9 +66,11 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ])) {
+            $user = Auth::user();
             // Если успешный вход
             return response()->json([
                 'success' => true,
+                'role' => $user->role
             ]);
         } else {
             // Если вход не удался

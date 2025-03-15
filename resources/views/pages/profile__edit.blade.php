@@ -93,7 +93,10 @@
                                     <input type="text" name="Organization" id="Organization" value="МЦК-КТИТС">
                                 </div>
 
+                                <button type="submit" class="button profileEdit__saveBtn mt30px">
+                                    Сохранить
 
+                                </button>
                                 <div class="button profileEdit__saveBtn mt30px">
                                     <a href="">
                                         Сохранить

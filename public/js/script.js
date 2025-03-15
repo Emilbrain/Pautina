@@ -84,82 +84,6 @@ document.addEventListener('keydown', (e) => {
         window.scrollTo(0, scrollY);
     }
 });
-// document.addEventListener("DOMContentLoaded", function () {
-//     const registerForm = document.getElementById('registerForm');
-//
-//     registerForm.addEventListener('submit', (e) => {
-//         e.preventDefault();
-//
-//         document.querySelectorAll(".error-message").forEach(el => el.innerHTML = "")
-//         document.querySelectorAll(".input-error").forEach(el => el.classList.remove("input-error"));
-//
-//         const formData = new FormData(registerForm);
-//
-//         fetch('/register', {
-//             method: 'POST',
-//             body: formData,
-//             headers: {
-//                 "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value
-//             }
-//         })
-//             .then(response => response.json())
-//             .then(data => {
-//                 if (data.success) {
-//                     modalRegist.classList.remove('active');
-//                     modalAuth.classList.toggle('active');
-//                 } else {
-//                     for (let field in data.errors) {
-//                         let errorDiv = document.getElementById("error-" + field);
-//                         let inputField = document.getElementById(field);
-//                         if (errorDiv) {
-//                             errorDiv.innerHTML = data.errors[field][0]; // Показываем первую ошибку
-//                         }
-//                         if (inputField) {
-//                             inputField.classList.add("input-error"); // Добавляем класс ошибки
-//                         }
-//                     }
-//                 }
-//             })
-//     });
-// });
-//
-// document.addEventListener("DOMContentLoaded", function () {
-//     const loginForm = document.getElementById('loginForm');
-//
-//     loginForm.addEventListener('submit', (e) => {
-//         e.preventDefault();
-//
-//         document.querySelectorAll(".error-message").forEach(el => el.innerHTML = "")
-//         document.querySelectorAll(".input-error").forEach(el => el.classList.remove("input-error"));
-//
-//         const formData = new FormData(loginForm);
-//
-//         fetch('/login', {
-//             method: 'POST',
-//             body: formData,
-//             headers: {
-//                 "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value
-//             }
-//         })
-//             .then(response => response.json())
-//             .then(data => {
-//                 if (data.success) {
-//                     window.location.href = '/profile';
-//                 } else {
-//                     for (let field in data.errors) {
-//                         let errorDiv = document.getElementById("error-" + field);
-//                         let inputField = document.getElementById(field);
-//                         if (errorDiv) {
-//                             errorDiv.innerHTML = data.errors[field][0]; // Показываем первую ошибку
-//                         }
-//                         if (inputField) {
-//                             inputField.classList.add("input-error"); // Добавляем класс ошибки
-//                         }
-//                     }
-//                 }
-//             })
-//     });
-// });
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -190,7 +114,11 @@ document.addEventListener("DOMContentLoaded", function () {
                             modalRegist.classList.remove('active');
                             modalAuth.classList.toggle('active');
                         } else {
-                            window.location.href = "/profile";
+                            if(data.role === 'admin') {
+                                window.location.href = "/admin";
+                            }else{
+                                window.location.href = "/profile";
+                            }
                         }
                     } else {
                         for (let field in data.errors) {
